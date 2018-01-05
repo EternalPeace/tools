@@ -1,9 +1,9 @@
 echo "please link http://blog.csdn.net/notbaron/article/details/75928745 for help"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-unzip vim-plugin.zip 
 
-rm -rf __MACOSX
+cd vim-plugin
+
 mkdir -p ~/.vim/plugged
 mkdir -p ~/.vim/plugin
 mkdir -p ~/.vim/doc
@@ -32,12 +32,12 @@ cd cscope-15.8b/
 
 
 #在源码根目录中执行如下：
-ctags -R
+#ctags -R
 #在源码根目录中执行如下：
-cscope -Rbq
+#cscope -Rbq
 #在vimrc中增加cs add [path]/cscope.out [path]/linux-3.10
-
-
+#
+#
 #help
 #安装后执行mm即可高亮标签
 #:Grep    按照指定的规则在指定的文件中查找
@@ -56,47 +56,47 @@ cscope -Rbq
 #Searchin files:*
 #默认是该目录下的所有文件, 此时你还可以编辑该行, 比如你只想搜索源码文件,例如：
 #Searchin files: *.c *.h
-
-ctag使用
-然后编辑一个c文件光标移到函数出，就可以按下Ctrl+]来跳转了。
-       按下Ctrl+T还能回来的，是不是很神奇？
-       PS：增加了函数定义, 删除了变量定义, tags文件不能自动rebuild, 你必须手动再运行一下命令:#ctags -R
-
-
-多文件编辑
-:bn   打开当前buffer的下一个buffer
-:bp  打开当前buffer的前一个buffer
-:b"num"   打开指定的buffer，"num"指的是buffer开始的那个数字
-
-文件切换
-:A    在新Buffer中切换到c/h文件
-:AS 横向分割窗口并打开c/h文件
-:AV 纵向分割窗口并打开c/h文件
-:AT 新建一个标签页并打开c/h文件
-
-窗口管理
-进入VIM后，直接在命令行模式下输入wm回车即可。
-       是不是很高级，取消再输入一次wm.
-查看帮助就使用如下命令：
-:helpwinmanager
-
-cscope使用
-查找函数func的定义,用命令:
-cs find g func
-查找在哪些被调用过(这个是ctags做不到的)：
-cs find c func
-如果调用很多可以输入
-:cw来找更快捷。
-cscope的主要功能是通过子命令"find"来实现的
-"cscope find"的用法如下：
-cs find c|d|e|f|g|i|s|t name
-0 或 s 查找本 C 符号(可以跳过注释)
-1 或 g 查找本定义
-2 或 d 查找本函数调用的函数
-3 或 c  查找调用本函数的函数
-4 或 t   查找本字符串
-6 或 e 查找本 egrep 模式
-7 或 f   查找本文件
-8 或 i   查找包含本文件的文件
-reset命令可以重新初始化所有连接。 
-用法  : cs reset 
+#
+#ctag使用
+#然后编辑一个c文件光标移到函数出，就可以按下Ctrl+]来跳转了。
+#       按下Ctrl+T还能回来的，是不是很神奇？
+#       PS：增加了函数定义, 删除了变量定义, tags文件不能自动rebuild, 你必须手动再运行一下命令:#ctags -R
+#
+#
+#多文件编辑
+#:bn   打开当前buffer的下一个buffer
+#:bp  打开当前buffer的前一个buffer
+#:b"num"   打开指定的buffer，"num"指的是buffer开始的那个数字
+#
+#文件切换
+#:A    在新Buffer中切换到c/h文件
+#:AS 横向分割窗口并打开c/h文件
+#:AV 纵向分割窗口并打开c/h文件
+#:AT 新建一个标签页并打开c/h文件
+#
+#窗口管理
+#进入VIM后，直接在命令行模式下输入wm回车即可。
+#       是不是很高级，取消再输入一次wm.
+#查看帮助就使用如下命令：
+#:helpwinmanager
+#
+#cscope使用
+#查找函数func的定义,用命令:
+#cs find g func
+#查找在哪些被调用过(这个是ctags做不到的)：
+#cs find c func
+#如果调用很多可以输入
+#:cw来找更快捷。
+#cscope的主要功能是通过子命令"find"来实现的
+#"cscope find"的用法如下：
+#cs find c|d|e|f|g|i|s|t name
+#0 或 s 查找本 C 符号(可以跳过注释)
+#1 或 g 查找本定义
+#2 或 d 查找本函数调用的函数
+#3 或 c  查找调用本函数的函数
+#4 或 t   查找本字符串
+#6 或 e 查找本 egrep 模式
+#7 或 f   查找本文件
+#8 或 i   查找包含本文件的文件
+#reset命令可以重新初始化所有连接。 
+#用法  : cs reset 
