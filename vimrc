@@ -20,6 +20,5 @@ set completeopt=longest,menu
 let g:SuperTabRetainCompletionType=2
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
-#need to modified
 set tags=/root/linux-4.13-rc1/tags
 cs add /root/linux-4.13-rc1/cscope.out /root/linux-4.13-rc1

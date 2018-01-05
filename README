@@ -19,7 +19,7 @@ unzip winmanager.zip
 cp *.vim ~/.vim/plugged/
 cp doc/* ~/.vim/doc/
 cp plugin/* ~/.vim/plugin/
-cp cplussytax.vim ~/.vim/syntax
+cp cplussytax.vim ~/.vim/syntax/
 cat vimrc >> ~/.vimrc
 
 tar -xvf cscope-15.8b.tar.gz 
@@ -28,6 +28,8 @@ cd cscope-15.8b/
 #else yum install ncurses-devel ncurses
 ./configure && make && make install
 
+#apt-get install ctags 
+#yum install ctags
 
 
 
