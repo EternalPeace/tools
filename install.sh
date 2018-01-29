@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "please link http://blog.csdn.net/notbaron/article/details/75928745 for help"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 tar -xvf vim-plugin.tar 
 cd vim-plugin
 
